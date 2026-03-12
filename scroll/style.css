@@ -1,0 +1,84 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.columns{
+    z-index: -2;
+/* margin-top: 8%;
+margin-bottom: 10%; */
+
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    position: relative;
+    /* overflow-y: hidden; REMOVED because it intercepts scroll() timeline and breaks the animation */
+    background: gray;
+
+}
+
+.main-container {
+    height: 600vh; /* Adjust this to change how quickly it scrolls */
+    margin: 20px;
+    position: relative;
+    view-timeline-name: --gallery-timeline;
+}
+
+.gallery {
+    position: sticky;
+    top: 20px; /* Accounts for the margin */
+    height: calc(100vh - 20px);
+    overflow: hidden;
+    border-radius: 1em;
+}
+
+@keyframes scroll-up {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(calc(-100% + 85vh - 40px)); }
+}
+
+@keyframes scroll-down {
+    0% { transform: translateY(calc(-100% + 85vh - 40px)); }
+    100% { transform: translateY(0); }
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+    padding: 10vh 0;
+    gap: 20px;
+    
+    animation: scroll-up linear both;
+    animation-timeline: --gallery-timeline;
+    animation-range: contain;
+}
+
+.column-reverse{
+    flex-direction: column-reverse;
+    
+    animation: scroll-down linear both;
+    animation-timeline: --gallery-timeline;
+    animation-range: contain;
+}
+
+.colunm-item{
+    margin: 16px 40px;
+
+
+}
+.img-wrap img {
+    border-radius: 1em;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 0.75;
+    object-fit: cover;
+}
+
+.fist{
+    height: 100vh;
+    background-color: red;
+}
+.last{
+    height: 100vh;
+    background-color: blue;
+}
