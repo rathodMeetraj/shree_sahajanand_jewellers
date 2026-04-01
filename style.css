@@ -119,7 +119,7 @@ margin-left: 10vh;
 
 /* banner */
 .banner{
-    background-image: url("../shree_sahajanand_jewellers/utility/top_bg.webp");
+    background-image: url("utility/top_bg.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -593,7 +593,7 @@ footer {
 
 /* Premium About Us Section */
 .premium-about-hero {
-    background-image: linear-gradient(rgba(43, 2, 2, 0.7), rgba(43, 2, 2, 0.7)), url("../shree_sahajanand_jewellers/utility/top_bg.webp");
+    background-image: linear-gradient(rgba(43, 2, 2, 0.7), rgba(43, 2, 2, 0.7)), url("utility/top_bg.webp");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
